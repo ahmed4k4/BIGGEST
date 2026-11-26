@@ -1,0 +1,15 @@
+{
+  "name": "@biggest/database",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "قاعدة بيانات BIGGEST (PostgreSQL / Supabase)",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "migrate": "node scripts/migrate.mjs",
+    "setup": "node scripts/migrate.mjs --seed",
+    "build-sql": "node scripts/build-single-sql.mjs"
+  }
+}

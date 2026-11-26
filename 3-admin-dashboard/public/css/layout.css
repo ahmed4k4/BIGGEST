@@ -1,0 +1,44 @@
+/* شريط المتر: العنصر المميز الوحيد في الواجهة. تدريج يتكرر كل 400px مع أرقام كل 100 */
+:root {
+  --tape-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='24'%3E%3Crect width='400' height='24' fill='%23F2C230'/%3E%3Cg stroke='%23111317' stroke-width='1.2'%3E%3Cpath d='M10 0v5M20 0v5M30 0v5M40 0v5M50 0v9M60 0v5M70 0v5M80 0v5M90 0v5M100 0v14M110 0v5M120 0v5M130 0v5M140 0v5M150 0v9M160 0v5M170 0v5M180 0v5M190 0v5M200 0v14M210 0v5M220 0v5M230 0v5M240 0v5M250 0v9M260 0v5M270 0v5M280 0v5M290 0v5M300 0v14M310 0v5M320 0v5M330 0v5M340 0v5M350 0v9M360 0v5M370 0v5M380 0v5M390 0v5M0 0v14'/%3E%3C/g%3E%3Cg fill='%23111317' font-family='Tahoma,sans-serif' font-size='9' font-weight='700' text-anchor='middle'%3E%3Ctext x='100' y='22'%3E10%3C/text%3E%3Ctext x='200' y='22'%3E20%3C/text%3E%3Ctext x='300' y='22'%3E30%3C/text%3E%3Ctext x='400' y='22' dx='-8'%3E40%3C/text%3E%3C/g%3E%3C/svg%3E");
+}
+.tape { height: 24px; background: var(--tape-img) repeat-x; background-size: 400px 24px; border-block: 1px solid #111317; }
+#app { min-height: 100vh; display: grid; grid-template-rows: auto auto 1fr; grid-template-columns: 236px 1fr; grid-template-areas: "top top" "tape tape" "nav main"; }
+.topbar { grid-area: top; background: var(--ink); color: #fff; display: flex; align-items: center; gap: 14px; padding: 10px 20px; }
+:root[data-theme="dark"] .topbar { background: #050506; }
+.brand { font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 28px; height: 28px; background: var(--tape); border-radius: 5px; display: inline-grid; place-items: center; color: var(--ink); font-weight: 700; }
+.topbar .spacer { flex: 1; }
+.topbar .who { font-size: .9rem; opacity: .9; }
+.topbar button { background: transparent; border: 1px solid #ffffff55; color: #fff; padding: 5px 12px; border-radius: var(--radius); cursor: pointer; }
+.topbar button:hover { background: #ffffff1f; }
+.tape-row { grid-area: tape; }
+.nav { grid-area: nav; background: var(--surface); border-inline-end: 1px solid var(--line); padding: 12px 0; overflow-y: auto; }
+.nav a { display: block; padding: 8px 20px; text-decoration: none; border-inline-start: 4px solid transparent; font-size: .95rem; }
+.nav a:hover { background: var(--surface-2); }
+.nav a[aria-current="page"] { border-inline-start-color: var(--tape); background: var(--surface-2); font-weight: 600; }
+.nav .group { padding: 14px 20px 4px; font-size: .8rem; color: var(--muted); }
+main { grid-area: main; padding: 22px 28px 60px; min-width: 0; max-width: 1280px; width: 100%; }
+.page-head { display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+.page-head h1 { margin: 0; flex: 1 1 auto; }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.stack > * + * { margin-top: 18px; }
+.cols { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start; }
+.menu-btn { display: none; }
+@media (max-width: 860px) {
+  #app { grid-template-columns: 1fr; grid-template-areas: "top" "tape" "main"; }
+  .menu-btn { display: inline-block; }
+  .nav { position: fixed; inset: 0 auto 0 0; width: 82vw; max-width: 300px; z-index: 40; transform: translateX(-102%); transition: transform .18s; box-shadow: 0 0 30px #0006; }
+  html[dir="rtl"] .nav { inset: 0 0 0 auto; transform: translateX(102%); }
+  .nav.open { transform: none; }
+  main { padding: 16px 16px 50px; }
+  .topbar { padding: 8px 14px; } .topbar .who { display: none; }
+}
+
+/* هوية BIGGEST */
+.brand-logo { height: 30px; width: auto; display: block; }
+.brand-sub { font-weight: 500; font-size: .95rem; opacity: .85; padding-inline-start: 10px; border-inline-start: 1px solid #fff4; }
+.login-brand { text-align: center; padding: 18px 0 4px; } .login-brand img { height: 84px; width: auto; }
+.logo-on-dark { display: none; }
+:root[data-theme="dark"] .logo-on-light { display: none; } :root[data-theme="dark"] .logo-on-dark { display: inline; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-on-light { display: none; } :root:not([data-theme="light"]) .logo-on-dark { display: inline; } }

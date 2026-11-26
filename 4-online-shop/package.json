@@ -1,0 +1,13 @@
+{
+  "name": "@biggest/online-shop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "المتجر الإلكتروني BIGGEST (ملفات ثابتة)",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs"
+  }
+}

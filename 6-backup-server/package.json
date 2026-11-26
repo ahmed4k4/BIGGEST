@@ -1,0 +1,18 @@
+{
+  "name": "@biggest/backup-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "السيرفر المحلي BIGGEST: نسخ احتياطي وتصدير Excel ومراقبة",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/index.js run",
+    "backup": "node src/index.js backup",
+    "export": "node src/index.js export",
+    "verify": "node src/index.js verify",
+    "health": "node src/index.js health",
+    "test": "node --test test/*.test.js"
+  }
+}

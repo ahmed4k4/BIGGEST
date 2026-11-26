@@ -1,0 +1,7 @@
+@page { margin: 4mm; }
+body { background: #fff !important; color: #000 !important; }
+.topbar, .tape-row, .nav, .page-head, .toolbar, #toasts, .no-print { display: none !important; }
+#app { display: block; } main { padding: 0; max-width: none; }
+
+.label { break-inside: avoid; page-break-inside: avoid; border: none !important; margin: 0 !important; }
+.labels { display: flex !important; flex-wrap: wrap; gap: 0; }

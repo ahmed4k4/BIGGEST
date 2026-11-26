@@ -1,0 +1,19 @@
+# نشر الـ API على Cloudflare Workers:  npx wrangler deploy
+# الأسرار (لا تُكتب هنا):  npx wrangler secret put SUPABASE_SERVICE_KEY   و   npx wrangler secret put JWT_SECRET
+name = "erp-api"
+main = "src/worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+SUPABASE_URL = "https://YOUR-PROJECT.supabase.co"
+COMPANY_ID = "00000000-0000-4000-8000-000000000001"
+ALLOWED_ORIGINS = "https://admin.example.com,https://shop.example.com"
+PUBLIC_API_URL = "https://api.example.com"
+ORDER_HOLD_MINUTES = "120"
+
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "erp-images"
+
+[triggers]
+crons = ["*/30 * * * *"]

@@ -1,0 +1,13 @@
+{
+  "name": "@biggest/admin-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "لوحة إدارة BIGGEST (ملفات ثابتة)",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs"
+  }
+}

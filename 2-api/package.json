@@ -1,0 +1,15 @@
+{
+  "name": "@biggest/api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "واجهة البرمجة (API) لنظام BIGGEST — تعمل على Cloudflare Workers أو Node",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node scripts/dev.mjs",
+    "seed": "node scripts/seed-dev.mjs",
+    "test": "node --test test/*.test.js"
+  }
+}

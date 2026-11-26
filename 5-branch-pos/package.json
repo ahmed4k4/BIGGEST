@@ -1,0 +1,16 @@
+{
+  "name": "@biggest/branch-pos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "كاشير الفرع BIGGEST: يعمل بدون إنترنت + طباعة + مزامنة",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/headless.js",
+    "test": "node --test test/*.test.js",
+    "desktop": "npx --yes electron@33 .",
+    "dist": "npx --yes electron-builder@25 --win --x64"
+  }
+}
